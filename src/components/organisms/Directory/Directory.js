@@ -1,13 +1,13 @@
-import MenuItem from 'components/molecules/MenuItem/MenuItem';
-import { items } from 'data/items';
 import React from 'react';
+import { directories } from 'data/directories';
+import MenuItem from 'components/molecules/DirectoryItem/DirectoryItem';
 import { Wrapper } from './Directory.styles';
 
 const Directory = () => {
   return (
     <Wrapper>
-      {items.map((itemData) => (
-        <MenuItem key={itemData.id} itemData={itemData} />
+      {directories.map((itemData, { ...props }) => (
+        <MenuItem key={itemData.id} itemData={itemData} {...props} />
       ))}
     </Wrapper>
   );
