@@ -15,11 +15,11 @@ export const StyledMenuItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.1rem solid var(--color-darkGrey);
-  border-radius: 1.2rem;
+  border-radius: 0.5rem;
   margin: 0 0.75rem 1.5rem;
   position: relative;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.16),
+    0 0.3rem 0.6rem rgba(0, 0, 0, 0.23);
   overflow: hidden;
 
   &:hover {
@@ -30,10 +30,10 @@ export const StyledMenuItem = styled.div`
   }
 
   &:first-child {
-    margin-right: 7.5px;
+    margin-right: 0.75rem;
   }
 
   &:last-child {
-    margin-left: 7.5px;
+    margin-left: 0.75rem;
   }
 `;
