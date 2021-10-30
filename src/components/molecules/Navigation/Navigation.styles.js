@@ -47,8 +47,10 @@ export const StyledLink = styled(NavLink).attrs({
   font-weight: 500;
   color: var(--color-darkGrey);
   text-decoration: none;
+  text-transform: uppercase;
   transition: font-weight 200ms ease-in;
   position: relative;
+  cursor: pointer;
 
   &.active-link {
     font-weight: 900;
