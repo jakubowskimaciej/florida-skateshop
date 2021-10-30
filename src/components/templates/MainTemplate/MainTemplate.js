@@ -9,10 +9,10 @@ const Wrapper = styled.main`
   grid-template-rows: 8rem 1fr;
 `;
 
-const MainTemplate = ({ children }) => {
+const MainTemplate = ({ children, currentUser }) => {
   return (
     <Wrapper>
-      <Navigation />
+      <Navigation currentUser={currentUser} />
       {children}
     </Wrapper>
   );
