@@ -21,6 +21,7 @@ export const StyledMenuItem = styled.div`
   box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.16),
     0 0.3rem 0.6rem rgba(0, 0, 0, 0.23);
   overflow: hidden;
+  cursor: pointer;
 
   &:hover {
     & ${ImageWrapper} {

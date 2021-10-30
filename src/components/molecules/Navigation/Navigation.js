@@ -1,9 +1,13 @@
-import { auth } from 'firebase/firebase.utils';
 import React from 'react';
+import { auth } from 'firebase/firebase.utils';
 import { withRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import { LinkWrapper, StyledLink, Wrapper } from './Navigation.styles';
 
-const Navigation = ({ history, currentUser }) => {
+const Navigation = ({ history }) => {
+  const currentUser = useSelector((state) => state.currentUser);
+
   return (
     <Wrapper>
       <h1 onClick={() => history.push(`/`)}>

@@ -3,7 +3,6 @@ import { Button } from 'components/atoms/Button/Button';
 import FormField from 'components/molecules/FormField/FormField';
 import { FormWrapper, Wrapper } from '../SignIn/SignIn.styles';
 import { auth, createUserProfileDoc } from 'firebase/firebase.utils';
-import { withRouter } from 'react-router';
 
 const initialState = {
   displayName: '',
