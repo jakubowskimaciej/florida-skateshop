@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { LinkWrapper, StyledLink, Wrapper } from './Navigation.styles';
 
 const Navigation = ({ history }) => {
-  const currentUser = useSelector((state) => state.user.currentUser);
+  const { currentUser } = useSelector((state) => state.user);
   console.log(currentUser);
 
   return (
