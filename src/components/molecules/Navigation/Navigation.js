@@ -4,10 +4,12 @@ import { withRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { LinkWrapper, StyledLink, Wrapper } from './Navigation.styles';
+import CartIcon from '../../atoms/CartIcon/CartIcon';
+import CartDropdown from 'components/molecules/CartDropdown/CartDropdown';
 
 const Navigation = ({ history }) => {
   const { currentUser } = useSelector((state) => state.user);
-  console.log(currentUser);
+  const { hidden } = useSelector((state) => state.cart);
 
   return (
     <Wrapper>
@@ -24,8 +26,11 @@ const Navigation = ({ history }) => {
         ) : (
           <StyledLink to={'/sign-in'}>sign in</StyledLink>
         )}
-        <StyledLink to={'/chart'}>chart</StyledLink>
+        <StyledLink as="div">
+          <CartIcon />
+        </StyledLink>
       </LinkWrapper>
+      {hidden ? null : <CartDropdown />}
     </Wrapper>
   );
 };

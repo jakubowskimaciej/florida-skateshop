@@ -9,7 +9,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const StyledMenuItem = styled.div`
-  min-width: 40rem;
+  min-width: 46rem;
   height: 35rem;
   flex: 1 1 auto;
   display: flex;

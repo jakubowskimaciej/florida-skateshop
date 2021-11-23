@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  min-width: 10rem;
-  padding: 1rem 2rem;
+  padding: ${({ isSmall }) => (isSmall ? '0.7rem 1.7rem' : '1rem 2rem')};
   margin: 1.5rem 0;
   background-color: ${({ isSecondary }) =>
     isSecondary ? 'var(--color-blue)' : 'var(--color-darkGrey)'};

@@ -1,7 +1,17 @@
+import { addItem } from 'actions';
 import React from 'react';
-import { StyledFooter, StyledImage, Wrapper } from './CollectionItem.styles';
+import { useDispatch } from 'react-redux';
+import {
+  StyledFooter,
+  StyledImage,
+  Wrapper,
+  StyledButton,
+} from './CollectionItem.styles';
 
-const CollectionItem = ({ itemData: { id, name, price, imageUrl } }) => {
+const CollectionItem = ({ item }) => {
+  const dispatch = useDispatch();
+  const { name, price, imageUrl } = item;
+
   return (
     <Wrapper>
       <StyledImage image={imageUrl} />
@@ -9,6 +19,9 @@ const CollectionItem = ({ itemData: { id, name, price, imageUrl } }) => {
         <span className="name">{name}</span>
         <span className="price">${price}</span>
       </StyledFooter>
+      <StyledButton onClick={() => dispatch(addItem(item))}>
+        Add to cart
+      </StyledButton>
     </Wrapper>
   );
 };

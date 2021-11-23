@@ -42,7 +42,7 @@ export const borderAnimation = keyframes`
 export const StyledLink = styled(NavLink).attrs({
   activeClassName: 'active-link',
 })`
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
   font-size: ${({ theme }) => theme.fontSize.m};
   font-weight: 500;
   color: var(--color-darkGrey);
@@ -51,6 +51,8 @@ export const StyledLink = styled(NavLink).attrs({
   transition: font-weight 200ms ease-in;
   position: relative;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 
   &.active-link {
     font-weight: 900;

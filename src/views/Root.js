@@ -14,6 +14,7 @@ import ShopPage from './ShopPage';
 
 import { auth, createUserProfileDoc } from 'firebase/firebase.utils';
 import { setCurrentUser } from 'actions';
+import CollectionPage from './CollectionPage';
 
 const Root = () => {
   const dispatch = useDispatch();
@@ -52,6 +53,9 @@ const Root = () => {
           </Route>
           <Route exact path="/sign-in">
             {currentUser ? <Redirect to="/" /> : <Login />}
+          </Route>
+          <Route path="/collection/:pathName">
+            <CollectionPage />
           </Route>
         </Switch>
       </MainTemplate>

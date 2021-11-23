@@ -9,7 +9,9 @@ const DirectoryItem = ({
   match,
 }) => {
   return (
-    <StyledMenuItem onClick={() => history.push(`${match.url}${linkUrl}`)}>
+    <StyledMenuItem
+      onClick={() => history.push(`${match.url}collection/${linkUrl}`)}
+    >
       <ImageWrapper image={imageUrl} />
       <ContentWrapper title={title} />
     </StyledMenuItem>

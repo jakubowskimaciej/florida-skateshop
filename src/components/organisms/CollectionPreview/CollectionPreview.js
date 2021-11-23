@@ -1,20 +1,34 @@
 import React from 'react';
 import CollectionItem from 'components/molecules/CollectionItem/CollectionItem';
-import { PreviewWrapper, Wrapper } from './CollectionPreview.styles';
+import {
+  PreviewWrapper,
+  Wrapper,
+  InfoWrapper,
+} from './CollectionPreview.styles';
+import { Button } from 'components/atoms/Button/Button';
+import { withRouter } from 'react-router';
+import { Title } from 'components/atoms/Title/Title';
 
-const CollectionPreview = ({ title, items }) => {
+const CollectionPreview = ({ title, items, history }) => {
+  const filtered = items.filter((item, index) => index < 4);
+
+  console.log(filtered);
+
   return (
     <Wrapper>
-      <h2>{title}</h2>
+      <InfoWrapper>
+        <Title>{title}</Title>
+        <Button isSmall onClick={() => history.push(`/collection/${title}`)}>
+          view all
+        </Button>
+      </InfoWrapper>
       <PreviewWrapper>
-        {items
-          .filter((item, index) => index < 4)
-          .map((itemData) => (
-            <CollectionItem key={itemData.id} itemData={itemData} />
-          ))}
+        {filtered.map((item) => (
+          <CollectionItem key={item.id} item={item} />
+        ))}
       </PreviewWrapper>
     </Wrapper>
   );
 };
 
-export default CollectionPreview;
+export default withRouter(CollectionPreview);
