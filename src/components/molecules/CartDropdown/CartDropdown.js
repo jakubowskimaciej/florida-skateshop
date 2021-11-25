@@ -1,15 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import {
-  ItemsWrapper,
-  StyledButton,
-  Wrapper,
-  ItemWrapper,
-  StyledInfo,
-} from './CartDropdown.styles';
+import { withRouter } from 'react-router';
+import { selectCartItems } from 'redux/cart/cart.selectors';
+import CartItem from '../CartItem/CartItem';
+import { ItemsWrapper, StyledButton, Wrapper } from './CartDropdown.styles';
 
-const CartDropdown = () => {
-  const { cartItems } = useSelector((state) => state.cart);
+const CartDropdown = ({ history }) => {
+  const cartItems = useSelector(selectCartItems);
 
   return (
     <Wrapper>
@@ -17,20 +14,19 @@ const CartDropdown = () => {
         {!cartItems.length ? (
           <h2>There is nothing yet.</h2>
         ) : (
-          cartItems.map((item) => (
-            <ItemWrapper key={item.id}>
-              <img src={item.imageUrl} alt={item.name} />
-              <StyledInfo>
-                <p>{item.name}</p>
-                <p>1 x ${item.price}</p>
-              </StyledInfo>
-            </ItemWrapper>
+          cartItems.map((itemData) => (
+            <CartItem key={itemData.id} itemData={itemData} />
           ))
         )}
       </ItemsWrapper>
-      <StyledButton>go to checkout</StyledButton>
+      <StyledButton
+        disabled={!cartItems.length}
+        onClick={() => history.push('/checkout')}
+      >
+        go to checkout
+      </StyledButton>
     </Wrapper>
   );
 };
 
-export default CartDropdown;
+export default withRouter(CartDropdown);

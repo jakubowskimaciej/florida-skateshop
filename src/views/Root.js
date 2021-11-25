@@ -15,10 +15,12 @@ import ShopPage from './ShopPage';
 import { auth, createUserProfileDoc } from 'firebase/firebase.utils';
 import { setCurrentUser } from 'actions';
 import CollectionPage from './CollectionPage';
+import { selectCurrentUser } from 'redux/user/user.selectors';
+import Checkout from './Checkout';
 
 const Root = () => {
   const dispatch = useDispatch();
-  const { currentUser } = useSelector((state) => state.user);
+  const currentUser = useSelector(selectCurrentUser);
 
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
@@ -56,6 +58,9 @@ const Root = () => {
           </Route>
           <Route path="/collection/:pathName">
             <CollectionPage />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
           </Route>
         </Switch>
       </MainTemplate>

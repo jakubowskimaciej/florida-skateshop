@@ -30,29 +30,14 @@ export const ItemsWrapper = styled.div`
 
 export const StyledButton = styled(Button)`
   text-transform: capitalize;
-`;
 
-export const ItemWrapper = styled.div`
-  width: 100%;
-  margin: 1rem 0;
-  display: flex;
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
 
-  img {
-    width: 8rem;
-    border-radius: 0.5rem;
-  }
-`;
-
-export const StyledInfo = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 2rem;
-
-  p {
-    font-size: ${({ theme }) => theme.fontSize.l};
+    &:hover {
+      background-color: var(--color-darkGrey);
+      color: var(--color-white);
+    }
   }
 `;

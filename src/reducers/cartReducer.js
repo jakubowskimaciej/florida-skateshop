@@ -1,4 +1,5 @@
 import * as TYPES from 'actions/types';
+import { addItemToCart } from '../redux/cart/cart.utils';
 
 const INITIAL_STATE = {
   hidden: true,
@@ -15,7 +16,7 @@ export const cartToggle = (state = INITIAL_STATE, action) => {
     case TYPES.ADD_ITEM:
       return {
         ...state,
-        cartItems: [...state.cartItems, action.payload],
+        cartItems: addItemToCart(state.cartItems, action.payload),
       };
     default:
       return state;
