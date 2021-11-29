@@ -18,6 +18,11 @@ import CollectionPage from './CollectionPage';
 import { selectCurrentUser } from 'redux/user/user.selectors';
 import Checkout from './Checkout';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faTrashAlt);
+
 const Root = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(selectCurrentUser);

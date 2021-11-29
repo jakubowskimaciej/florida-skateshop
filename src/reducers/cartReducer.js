@@ -1,5 +1,5 @@
 import * as TYPES from 'actions/types';
-import { addItemToCart } from '../redux/cart/cart.utils';
+import { addItemToCart, removeItemFromCart } from '../redux/cart/cart.utils';
 
 const INITIAL_STATE = {
   hidden: true,
@@ -17,6 +17,18 @@ export const cartToggle = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cartItems: addItemToCart(state.cartItems, action.payload),
+      };
+    case TYPES.REMOVE_ITEM:
+      return {
+        ...state,
+        cartItems: removeItemFromCart(state.cartItems, action.payload),
+      };
+    case TYPES.CLEAR_ITEMS:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter(
+          (cartItem) => cartItem.name !== action.payload.name
+        ),
       };
     default:
       return state;
