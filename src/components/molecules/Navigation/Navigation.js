@@ -6,10 +6,11 @@ import { useSelector } from 'react-redux';
 import { LinkWrapper, StyledLink, Wrapper } from './Navigation.styles';
 import CartIcon from '../../atoms/CartIcon/CartIcon';
 import CartDropdown from 'components/molecules/CartDropdown/CartDropdown';
+import { selectCartHidden } from 'redux/cart/cart.selectors';
 
 const Navigation = ({ history }) => {
   const { currentUser } = useSelector((state) => state.user);
-  const { hidden } = useSelector((state) => state.cart);
+  const hidden = useSelector(selectCartHidden);
 
   return (
     <Wrapper>

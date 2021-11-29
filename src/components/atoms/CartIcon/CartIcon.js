@@ -1,16 +1,18 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { cartToggleHidden } from 'actions';
 
 import { ItemCount, ShoppingIcon, Wrapper } from './CartIcon.styles';
+import { selectCartItemsCount } from 'redux/cart/cart.selectors';
 
 const CartIcon = () => {
   const dispatch = useDispatch();
+  const itemCount = useSelector(selectCartItemsCount);
 
   return (
     <Wrapper onClick={() => dispatch(cartToggleHidden())}>
       <ShoppingIcon />
-      <ItemCount>0</ItemCount>
+      <ItemCount>{itemCount}</ItemCount>
     </Wrapper>
   );
 };

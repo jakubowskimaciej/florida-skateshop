@@ -13,3 +13,13 @@ export const addItem = (item) => ({
   type: TYPES.ADD_ITEM,
   payload: item,
 });
+
+export const removeItem = (item) => ({
+  type: TYPES.REMOVE_ITEM,
+  payload: item,
+});
+
+export const clearItemsFromCart = (item) => ({
+  type: TYPES.CLEAR_ITEMS,
+  payload: item,
+});
