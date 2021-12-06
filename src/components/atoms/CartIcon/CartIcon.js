@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { cartToggleHidden } from 'actions';
 
 import { ItemCount, ShoppingIcon, Wrapper } from './CartIcon.styles';
-import { selectCartItemsCount } from 'redux/cart/cart.selectors';
+import { selectCartItemsCount } from 'selectors/cart/cart.selectors';
 
 const CartIcon = () => {
   const dispatch = useDispatch();

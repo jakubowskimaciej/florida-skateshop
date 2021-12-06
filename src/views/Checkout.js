@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectCartItems, selectCartTotal } from 'redux/cart/cart.selectors';
+import {
+  selectCartItems,
+  selectCartTotal,
+} from 'selectors/cart/cart.selectors';
 import { clearItemsFromCart, addItem, removeItem } from 'actions';
 import CheckoutItem from 'components/molecules/CheckoutItem/CheckoutItem';
 import { CheckoutHeader, StyledTotal, Wrapper } from './Checkout.styles';

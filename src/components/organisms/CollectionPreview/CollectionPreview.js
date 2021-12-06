@@ -12,8 +12,6 @@ import { Title } from 'components/atoms/Title/Title';
 const CollectionPreview = ({ title, items, history }) => {
   const filtered = items.filter((item, index) => index < 4);
 
-  console.log(filtered);
-
   return (
     <Wrapper>
       <InfoWrapper>

@@ -1,4 +1,4 @@
-export const shopItems = [
+const INITIAL_STATE = [
   {
     id: 1,
     title: 'hats',
@@ -269,3 +269,10 @@ export const shopItems = [
     ],
   },
 ];
+
+export const collectionReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};

@@ -15,7 +15,7 @@ import ShopPage from './ShopPage';
 import { auth, createUserProfileDoc } from 'firebase/firebase.utils';
 import { setCurrentUser } from 'actions';
 import CollectionPage from './CollectionPage';
-import { selectCurrentUser } from 'redux/user/user.selectors';
+import { selectCurrentUser } from 'selectors/user/user.selectors';
 import Checkout from './Checkout';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
