@@ -1,6 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import CollectionPreview from 'components/organisms/CollectionPreview/CollectionPreview';
-import { shopItems } from 'data/shopItems';
 import styled from 'styled-components';
 
 const Wrapper = styled.section`
@@ -9,6 +9,8 @@ const Wrapper = styled.section`
 `;
 
 const ShopPage = () => {
+  const shopItems = useSelector((state) => state.collection);
+
   return (
     <Wrapper>
       {shopItems.map(({ id, ...props }) => (

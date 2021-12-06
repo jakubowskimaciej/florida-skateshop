@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import { shopItems } from 'data/shopItems';
+import { useSelector } from 'react-redux';
+
 import CollectionItem from 'components/molecules/CollectionItem/CollectionItem';
 import styled from 'styled-components';
 import { Title } from 'components/atoms/Title/Title';
@@ -25,6 +26,7 @@ const ItemsWrapper = styled.div`
 
 const CollectionPage = () => {
   const { pathName } = useParams();
+  const shopItems = useSelector((state) => state.collection);
 
   return (
     <Wrapper>

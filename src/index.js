@@ -7,15 +7,18 @@ import GlobalStyles from 'utils/GlobalStyles';
 import 'utils/fonts.css';
 
 import { Provider } from 'react-redux';
-import { store } from 'store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from 'store';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Root />
-      </ThemeProvider>
+      <PersistGate persistor={persistor}>
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <Root />
+        </ThemeProvider>
+      </PersistGate>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

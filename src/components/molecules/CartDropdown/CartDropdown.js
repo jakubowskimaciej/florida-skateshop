@@ -2,7 +2,7 @@ import { cartToggleHidden } from 'actions';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { withRouter } from 'react-router';
-import { selectCartItems } from 'redux/cart/cart.selectors';
+import { selectCartItems } from 'selectors/cart/cart.selectors';
 import CartItem from '../CartItem/CartItem';
 import { ItemsWrapper, StyledButton, Wrapper } from './CartDropdown.styles';
 

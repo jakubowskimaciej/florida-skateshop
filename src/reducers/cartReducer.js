@@ -1,5 +1,8 @@
 import * as TYPES from 'actions/types';
-import { addItemToCart, removeItemFromCart } from '../redux/cart/cart.utils';
+import {
+  addItemToCart,
+  removeItemFromCart,
+} from '../selectors/cart/cart.utils';
 
 const INITIAL_STATE = {
   hidden: true,
