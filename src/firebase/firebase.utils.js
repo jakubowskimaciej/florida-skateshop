@@ -3,7 +3,7 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/auth';
 
 const config = {
-  apiKey: 'AIzaSyARaw84gpC0Wwh3jOUYMw7r2nj4I2mOHCY',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: 'florida-db-8b138.firebaseapp.com',
   projectId: 'florida-db-8b138',
   storageBucket: 'florida-db-8b138.appspot.com',

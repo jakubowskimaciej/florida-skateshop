@@ -7,6 +7,8 @@ import {
 import { clearItemsFromCart, addItem, removeItem } from 'actions';
 import CheckoutItem from 'components/molecules/CheckoutItem/CheckoutItem';
 import { CheckoutHeader, StyledTotal, Wrapper } from './Checkout.styles';
+import StripeButton from 'components/atoms/StripeButton/StripeButton';
+import PaymentInfo from 'components/molecules/PaymentInfo/PaymentInfo';
 
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
@@ -45,7 +47,13 @@ const Checkout = () => {
           removeItem={() => handleRemoveItem(itemData)}
         />
       ))}
-      <StyledTotal>TOTAL PRICE: ${total}</StyledTotal>
+      <StyledTotal>
+        <div>
+          <p>TOTAL PRICE: ${total}</p>
+          <StripeButton price={total} />
+        </div>
+      </StyledTotal>
+      <PaymentInfo />
     </Wrapper>
   );
 };
