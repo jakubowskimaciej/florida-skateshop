@@ -36,4 +36,11 @@ export const StyledTotal = styled.div`
   margin-top: 5rem;
   font-size: ${({ theme }) => theme.fontSize.xxl};
   font-weight: 200;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
