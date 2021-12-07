@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5rem auto;
+  margin: 5rem auto 0 auto;
 `;
 
 export const CheckoutHeader = styled.div`
