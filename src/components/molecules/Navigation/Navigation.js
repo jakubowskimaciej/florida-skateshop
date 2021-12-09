@@ -15,7 +15,7 @@ const Navigation = ({ history }) => {
   return (
     <Wrapper>
       <h1 onClick={() => history.push(`/`)}>
-        <span>florida</span> skateshop
+        <span>florida</span> deploy test
       </h1>
       <LinkWrapper>
         <StyledLink to={'/shop'}>shop</StyledLink>
