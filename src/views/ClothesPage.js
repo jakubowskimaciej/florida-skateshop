@@ -8,7 +8,7 @@ const Wrapper = styled.section`
   height: 100%;
 `;
 
-const ShopPage = () => {
+const ClothesPage = () => {
   const shopItems = useSelector((state) => state.collection);
 
   return (
@@ -20,4 +20,4 @@ const ShopPage = () => {
   );
 };
 
-export default ShopPage;
+export default ClothesPage;

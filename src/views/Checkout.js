@@ -50,7 +50,7 @@ const Checkout = () => {
       <StyledTotal>
         <div>
           <p>TOTAL PRICE: ${total}</p>
-          <StripeButton price={total} />
+          {!cartItems.length ? null : <StripeButton price={total} />}
         </div>
       </StyledTotal>
       <PaymentInfo />

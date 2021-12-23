@@ -21,7 +21,7 @@ export const Wrapper = styled.nav`
 `;
 
 export const LinkWrapper = styled.div`
-  width: 30%;
+  width: 40%;
   display: flex;
   justify-content: space-between;
 
@@ -53,6 +53,7 @@ export const StyledLink = styled(NavLink).attrs({
   cursor: pointer;
   display: flex;
   align-items: center;
+  margin: 0 1rem;
 
   &.active-link {
     font-weight: 900;

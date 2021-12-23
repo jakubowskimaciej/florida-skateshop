@@ -18,7 +18,8 @@ const Navigation = ({ history }) => {
         <span>florida</span> skateshop
       </h1>
       <LinkWrapper>
-        <StyledLink to={'/shop'}>shop</StyledLink>
+        <StyledLink to={'/clothes'}>clothes</StyledLink>
+        <StyledLink to={'/skateboard'}>skateboard</StyledLink>
         <StyledLink to={'/contact'}>contact</StyledLink>
         {currentUser ? (
           <StyledLink as="div" onClick={() => auth.signOut()}>

@@ -6,6 +6,7 @@ import { userReducer } from './userReducer';
 import { cartToggle } from './cartReducer';
 import { directoryReducer } from './directoryReducer';
 import { collectionReducer } from './collectionReducer';
+import { skateboardReducer } from './skateboardReducer';
 
 const persistConfig = {
   key: 'root',
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   cart: cartToggle,
   directory: directoryReducer,
   collection: collectionReducer,
+  skateboards: skateboardReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

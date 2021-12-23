@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import Homepage from './Homepage';
 import Login from './Login';
-import ShopPage from './ShopPage';
 
 import { auth, createUserProfileDoc } from 'firebase/firebase.utils';
 import { setCurrentUser } from 'actions';
@@ -20,6 +19,8 @@ import Checkout from './Checkout';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import ClothesPage from './ClothesPage';
+import SkateboardPage from './SkateboardPage';
 
 library.add(faTrashAlt);
 
@@ -55,8 +56,11 @@ const Root = () => {
           <Route exact path="/">
             <Homepage />
           </Route>
-          <Route path="/shop">
-            <ShopPage />
+          <Route path="/clothes">
+            <ClothesPage />
+          </Route>
+          <Route path="/skateboard/:pathName?">
+            <SkateboardPage />
           </Route>
           <Route exact path="/sign-in">
             {currentUser ? <Redirect to="/" /> : <Login />}
